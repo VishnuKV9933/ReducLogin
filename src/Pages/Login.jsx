@@ -40,7 +40,7 @@ function Login() {
   return (
     <div className="body">
       <div className="login-container">
-        <h2>Login Page</h2>
+        <h2>Login</h2>
         <p style={{ color: "red" }}>{message}</p>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="form-group">

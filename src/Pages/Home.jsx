@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect} from "react";
 import "./Home.css";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -8,6 +8,11 @@ function Home() {
   const { user } = useSelector((state) => state.login);
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  useEffect(()=>{
+    if(!user){
+        navigate('/')
+    }
+  },[])
   function logout() {
     dispatch(logOut());
     navigate("/login");

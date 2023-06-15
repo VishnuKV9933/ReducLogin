@@ -3,10 +3,9 @@ import './Register.css'
 import { useForm } from "react-hook-form";
 import { Link,useNavigate } from 'react-router-dom'
 import {registeration} from '../Redux/Logn'
-import { useSelector,useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 export default function Register() {
-    const {user} = useSelector((state)=>state.login)
     const dispatch=useDispatch()
     const navigate=useNavigate()
     const {
@@ -21,14 +20,13 @@ export default function Register() {
         dispatch(registeration(data))
         navigate('/login')
     }
-console.log(user);
 
 
   return (
     <div className='body'>
    
     <div className="login-container">
-        <h2>Register Page</h2>
+        <h2>Register</h2>
         <form  onSubmit={handleSubmit(onSubmit)}>
           <div className="form-group">
             <label htmlFor="username">Username:</label>
