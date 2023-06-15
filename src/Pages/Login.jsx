@@ -26,6 +26,7 @@ function Login() {
     }
     if (data.password !== user.password) {
       generateMessage("Incorrect Password");
+      return
     }
     navigate("/home");
   };
